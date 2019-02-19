@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+        <input id="tagname" name="tagname" />
+        <input id="tagtext" name="tagtext" />
+        
+        <button onclick="handler()">Push me</button>
+        <a href=>link</a>
+        <!-- <script src="https://button.glitch.me/button.js"></script> -->
+    <!-- <input type="button" onclick="add_input();" value="Добавить элемент"> -->
+    <!-- <form>
+    <div id="inputi"><input name="my_input"></div>
+    </form> -->
+    <script>
+    // var p = document.getElementById("inputi") ;
+    // var length = 1 ;
+    // function add_input() {
+    //  var new_input = document.createElement("input") ;
+    //  new_input.name = "my_input" ;
+    //  var div = document.createElement('div') ;
+    //  div.innerHTML = '<br>div элемент №' + length + '<br>' ;
+    //  div.appendChild(new_input) ;
+    //  p.appendChild(div) ;
+    //  length++ ;
+    // } ;
+        // var tag = document.getElementById('inpt1').value;
+        // var text = document.getElementById('inpt2').value;
+        
+        // btn.onclick= function() {
+        //     var input = document.createElement(tag);
+        //     input.innerHTML=text;
+        //     document.body.appendChild(input);
+        // }
+
+
+
+    function handler() {
+        console.log(window.tagname.value); 
+        console.log(window.tagtext.value); 
+
+        if (window.tagname.value && window.tagtext.value) {
+            var tag = window.tagname.value;
+            var text = window.tagtext.value;
+            var element = document.createElement(tag);
+            element.innerText = text;
+            document.body.appendChild(element);
+            }
+        }
+
+    function changeHandler() {
+    console.log(this); 
+    }
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+    window.tagname.onclick = function(event) {
+        // вывести тип события, элемент и координаты клика
+        console.log(event.type + " на " + event.currentTarget);
+        console.log(event.clientX + ":" + event.clientY);
+    }
+    // window.tagname.addEventListener('change', function(e) {console.log(e.target.value)});
+    })
+    </script>
+    
+</body>
+</html>
